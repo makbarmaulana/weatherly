@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.forecast-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.forecast-container {
+  padding: 0.5rem;
+}
+
+@media only screen and (min-width: 640px) {
+  .forecast-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .forecast-container {
+    display: flex;
+    margin-top: 0.5rem;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
+}

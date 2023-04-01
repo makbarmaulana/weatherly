@@ -5,32 +5,33 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].js',
   },
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(svg|png|jpe?g)$/,
+        include: path.resolve(__dirname, 'src/assets'),
         use: [
           {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/',
+              publicPath: 'assets/',
+            },
           },
         ],
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-            },
-          },
-        ],
+        test: /\.css$/i,
+        exclude: /styles/,
+        use: ['to-string-loader', 'css-loader'],
+      },
+      {
+        test: /\.css$/i,
+        include: /styles/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
@@ -38,6 +39,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
+      chunks: ['main'],
     }),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 20000,
+      maxSize: 244000,
+    },
+    runtimeChunk: {
+      name: 'runtime',
+    },
+  },
 };

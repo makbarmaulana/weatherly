@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.current-weather {
+  margin: auto;
+  user-select: none;
+}
+
+.current-weather .time-zone {
+  padding: 0.5rem;
+}
+
+.current-weather .time-zone h3 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.thumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-container img {
+  width: 100px;
+  aspect-ratio: 1 / 1;
+  -webkit-user-drag: none;
+}
+
+.location-info {
+  text-align: center;
+}
+
+.location-info .weather {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+
+.location-info .date {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.location-info .temp {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.location-info .temp .parameter {
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.location-info .temp .deg {
+  margin-top: 0.2rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.location-info .temp .unit {
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.weather-detail {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+  text-align: center;
+}
+
+.weather-detail div img {
+  margin-bottom: 0.5rem;
+  width: 20px;
+  -webkit-user-drag: none;
+}
+
+.weather-detail div h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.weather-detail div p {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 640px) {
+  .current-weather {
+    width: 600px;
+  }
+
+  .weather-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .current-weather .time-zone {
+    padding: unset;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .current-weather .time-zone h3 {
+    font-size: 1.3rem;
+  }
+
+  .thumb-container img {
+    width: 150px;
+  }
+
+  .location-info .weather {
+    font-size: 1.4rem;
+  }
+
+  .location-info .temp .parameter {
+    font-size: 4.3rem;
+    font-weight: 300;
+  }
+
+  .location-info .temp .deg {
+    font-size: 3rem;
+  }
+
+  .location-info .temp .unit {
+    margin-top: 0.6rem;
+    font-size: 1.4rem;
+  }
+
+  .weather-detail div img {
+    width: 25px;
+  }
+
+  .weather-detail div h3 {
+    font-size: 1rem;
+  }
+
+  .weather-detail div p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .current-weather {
+    margin: auto;
+  }
+
+  .current-weather .time-zone h3 {
+    padding: unset;
+  }
+}
